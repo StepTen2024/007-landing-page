@@ -119,7 +119,7 @@ export default function Features() {
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              className={`card-glow group relative p-8 rounded-xl bg-gradient-to-b ${feature.gradient} border border-white/5 hover:border-[#c5a55a]/20 transition-all duration-300`}
+              className={`card-glow feature-card-hover group relative p-8 rounded-xl bg-gradient-to-b ${feature.gradient} border border-white/5 hover:border-[#c5a55a]/20 transition-all duration-300`}
             >
               <div className="w-14 h-14 rounded-xl bg-[#c5a55a]/10 flex items-center justify-center text-[#c5a55a] mb-5 group-hover:bg-[#c5a55a]/20 transition-colors">
                 {feature.icon}

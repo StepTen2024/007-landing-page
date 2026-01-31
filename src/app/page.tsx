@@ -7,6 +7,9 @@ import DashboardPreview from "@/components/DashboardPreview";
 import Pipeline from "@/components/Pipeline";
 import AdvertisingEngine from "@/components/AdvertisingEngine";
 import CRMIntegration from "@/components/CRMIntegration";
+import DocumentIntelligence from "@/components/DocumentIntelligence";
+import MarketResearch from "@/components/MarketResearch";
+import BusinessAdmin from "@/components/BusinessAdmin";
 import SecretMethod from "@/components/SecretMethod";
 import Pricing from "@/components/Pricing";
 import SocialProof from "@/components/SocialProof";
@@ -26,6 +29,9 @@ export default function Home() {
       <Pipeline />
       <AdvertisingEngine />
       <CRMIntegration />
+      <DocumentIntelligence />
+      <MarketResearch />
+      <BusinessAdmin />
       <SecretMethod />
       <Pricing />
       <SocialProof />

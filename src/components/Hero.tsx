@@ -46,8 +46,11 @@ export default function Hero() {
             <br className="hidden sm:block" />
             — all from one command center.
           </p>
-          <p className="text-sm text-white/30 mb-10">
+          <p className="text-sm text-white/30 mb-3">
             Built by a former top-producing agent. Not another CRM.
+          </p>
+          <p className="text-xs text-[#c5a55a]/60 font-semibold tracking-widest uppercase mb-10">
+            Built by agents, for agents.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

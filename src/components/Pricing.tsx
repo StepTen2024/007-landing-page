@@ -4,54 +4,52 @@ import { motion } from "framer-motion";
 
 const plans = [
   {
-    name: "Rookie",
-    price: "197",
-    description: "For new agents chasing their first listings",
+    name: "Agent",
+    description: "For individual agents ready to dominate their market",
     features: [
+      "AI command center",
+      "Prospecting map",
+      "Buyer intelligence system",
       "SEO content engine",
       "Email marketing automation",
-      "Buyer intelligence system",
-      "Basic prospecting tools",
-      "Suburb profiles & market data",
-      "AI chat clone (1 bot)",
-      "Email support",
+      "Voice-to-text field intel",
+      "AI chat clone",
     ],
     popular: false,
-    cta: "Start Free Trial",
+    cta: "Book a Demo",
+    ctaLink: "#contact",
   },
   {
-    name: "Pro",
-    price: "497",
-    description: "For growing agents ready to dominate",
+    name: "Office",
+    description: "For agencies scaling their team's performance",
     features: [
-      "Everything in Rookie, plus:",
-      "Prospecting map (full farm area)",
-      "Listing scraper & tracker",
-      "Google dynamic ads",
-      "Facebook XML catalog",
-      "CRM integration (AgentBox, VaultRE)",
-      "Voice-to-text field intel",
-      "Priority support",
-    ],
-    popular: true,
-    cta: "Start Free Trial",
-  },
-  {
-    name: "Team",
-    price: "997",
-    description: "For teams & agencies that want everything",
-    features: [
-      "Everything in Pro, plus:",
+      "Everything in Agent, plus:",
       "Team management & KPIs",
       "Multi-suburb coverage",
+      "CRM integration (AgentBox, VaultRE)",
+      "Google & Facebook ads engine",
+      "Listing pipeline automation",
+      "Document AI",
+    ],
+    popular: true,
+    cta: "Book a Demo",
+    ctaLink: "#contact",
+  },
+  {
+    name: "Enterprise",
+    description: "Full white-label command center on your domain",
+    features: [
+      "Everything in Office, plus:",
+      "Custom branding & your domain",
+      "Dedicated AI bot",
       "API access",
-      "Custom AI training",
-      "White-label reports",
-      "Dedicated onboarding",
-      "Priority phone support",
+      "Priority support",
+      "Custom integrations",
+      "White-label everything",
     ],
     popular: false,
-    cta: "Start Free Trial",
+    cta: "Talk to Us",
+    ctaLink: "#contact",
   },
 ];
 
@@ -86,7 +84,7 @@ export default function Pricing() {
             <span className="text-white/40">unfair advantage.</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            14-day free trial. No credit card required. Cancel anytime.
+            Choose the plan that matches your ambition.
           </p>
         </motion.div>
 
@@ -101,7 +99,7 @@ export default function Pricing() {
             <motion.div
               key={plan.name}
               variants={itemVariants}
-              className={`relative rounded-xl p-6 sm:p-8 border transition-all duration-300 ${
+              className={`relative rounded-xl p-6 sm:p-8 border transition-all duration-300 feature-card-hover ${
                 plan.popular
                   ? "bg-[#141414] border-[#c5a55a]/40 pulse-gold"
                   : "bg-[#111] border-white/5 hover:border-white/10"
@@ -113,19 +111,14 @@ export default function Pricing() {
                 </div>
               )}
 
-              <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-              <p className="text-sm text-white/40 mb-6">{plan.description}</p>
-
-              <div className="mb-6">
-                <span className="text-4xl font-bold">${plan.price}</span>
-                <span className="text-white/40 ml-1">/month AUD</span>
-              </div>
+              <h3 className="text-2xl font-bold mb-1 gold-text">{plan.name}</h3>
+              <p className="text-sm text-white/40 mb-8">{plan.description}</p>
 
               <a
-                href="#contact"
-                className={`block w-full text-center py-3 rounded font-semibold transition-all ${
+                href={plan.ctaLink}
+                className={`block w-full text-center py-3.5 rounded font-semibold transition-all ${
                   plan.popular
-                    ? "bg-[#c5a55a] text-black hover:bg-[#d4b96a]"
+                    ? "bg-[#c5a55a] text-black hover:bg-[#d4b96a] hover:shadow-[0_0_30px_rgba(197,165,90,0.3)]"
                     : "bg-white/5 text-white border border-white/10 hover:border-[#c5a55a]/50 hover:text-[#c5a55a]"
                 }`}
               >
@@ -159,6 +152,24 @@ export default function Pricing() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Investment note */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <p className="text-white/60 text-lg mb-2">
+            Investment starts from{" "}
+            <span className="text-[#c5a55a] font-semibold">$999/month</span>.
+            Enterprise includes setup and onboarding.
+          </p>
+          <p className="text-white/30 text-sm">
+            Every plan includes our proprietary Buyer Intelligence System.
+          </p>
         </motion.div>
       </div>
     </section>
