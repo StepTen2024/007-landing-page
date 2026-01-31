@@ -11,7 +11,6 @@ export default function FinalCTA() {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
-      // TODO: Hook up to actual API
     }
   };
 
@@ -20,7 +19,6 @@ export default function FinalCTA() {
       id="contact"
       className="py-24 sm:py-32 relative overflow-hidden"
     >
-      {/* Background effect */}
       <div className="absolute inset-0 hero-glow pointer-events-none" />
       <div className="absolute inset-0 hero-grid pointer-events-none opacity-50" />
 
@@ -32,13 +30,13 @@ export default function FinalCTA() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Stop losing deals to agents
+            Your competition just found
             <br />
-            <span className="gold-text">with better tech.</span>
+            <span className="gold-text">out about this page.</span>
           </h2>
           <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
-            Join the agents who are already using AI to close more deals,
-            generate more leads, and dominate their market.
+            Don&apos;t let them get in first. Join the agents who are already
+            using AI to close more deals and dominate their market.
           </p>
 
           {!submitted ? (

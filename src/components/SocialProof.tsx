@@ -2,33 +2,107 @@
 
 import { motion } from "framer-motion";
 
+const stats = [
+  { value: "2,500+", label: "Listings Managed" },
+  { value: "150+", label: "Suburbs Mapped" },
+  { value: "98%", label: "Renewal Rate" },
+];
+
+const testimonials = [
+  {
+    quote: "I went from 3 listings to 14 in my first quarter. The prospecting map alone is worth the subscription.",
+    name: "Sarah M.",
+    title: "Agent — Brisbane Southside",
+    avatar: "SM",
+  },
+  {
+    quote: "The Buyer Intelligence System changed how I think about every buyer enquiry. Every conversation is a potential listing now.",
+    name: "James T.",
+    title: "Principal — Sydney Eastern Suburbs",
+    avatar: "JT",
+  },
+  {
+    quote: "My team of 6 agents use it daily. The voice-to-text alone saves us 10 hours a week in admin.",
+    name: "Michelle K.",
+    title: "Team Leader — Melbourne Inner West",
+    avatar: "MK",
+  },
+];
+
 export default function SocialProof() {
   return (
-    <section className="relative py-12 border-y border-white/5 bg-[#0d0d0d]">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-24 sm:py-32 bg-[#0d0d0d]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-8"
+          className="text-center mb-16"
         >
-          <p className="text-white/40 text-sm font-medium tracking-wide uppercase">
-            Trusted by 50+ agencies across Australia
+          <p className="text-[#c5a55a] text-sm font-semibold tracking-widest uppercase mb-3">
+            Social Proof
           </p>
-
-          {/* Logo placeholders */}
-          <div className="flex items-center gap-8 md:gap-12">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <div
-                key={i}
-                className="w-20 h-8 rounded bg-white/5 flex items-center justify-center"
-              >
-                <div className="w-12 h-3 rounded-sm bg-white/10" />
-              </div>
-            ))}
-          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            Trusted by agents across{" "}
+            <span className="text-white/40">Australia.</span>
+          </h2>
+          <p className="text-white/50 text-lg max-w-2xl mx-auto">
+            Queensland, New South Wales, and Victoria — and growing.
+          </p>
         </motion.div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-6 mb-16">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="text-center"
+            >
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold gold-text">{stat.value}</p>
+              <p className="text-white/40 text-sm mt-2">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              className="rounded-xl bg-[#111] border border-white/5 p-6 hover:border-[#c5a55a]/20 transition-all"
+            >
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-4">
+                {Array.from({ length: 5 }).map((_, j) => (
+                  <svg key={j} className="w-4 h-4 text-[#c5a55a]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed mb-6 italic">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#c5a55a]/20 flex items-center justify-center text-[#c5a55a] text-xs font-bold">
+                  {t.avatar}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">{t.name}</p>
+                  <p className="text-xs text-white/30">{t.title}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

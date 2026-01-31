@@ -5,33 +5,29 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-grid">
-      {/* Glow overlay */}
       <div className="absolute inset-0 hero-glow pointer-events-none" />
 
-      {/* Floating particles (CSS only) */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
             className="particle"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${4 + Math.random() * 4}s`,
+              left: `${10 + (i * 4.2) % 80}%`,
+              top: `${5 + (i * 3.7) % 90}%`,
+              animationDelay: `${(i * 0.3) % 6}s`,
+              animationDuration: `${4 + (i % 4)}s`,
             }}
           />
         ))}
       </div>
 
-      {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c5a55a]/30 bg-[#c5a55a]/5 mb-8">
             <div className="w-2 h-2 rounded-full bg-[#c5a55a] animate-pulse" />
             <span className="text-[#c5a55a] text-sm font-medium">
@@ -39,24 +35,21 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
-            Your AI{" "}
-            <span className="gold-text">Command Center</span>
-            <br />
-            for Real Estate
+            Outperform Every Agent{" "}
+            <br className="hidden sm:block" />
+            <span className="gold-text">in Your Market</span>
           </h1>
 
-          {/* Subline */}
-          <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Close more deals. Know your market better. Work less.
+          <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-4 leading-relaxed">
+            AI-powered listing intelligence, prospecting, and marketing
             <br className="hidden sm:block" />
-            <span className="text-white/40">
-              Your competition is still using spreadsheets.
-            </span>
+            — all from one command center.
+          </p>
+          <p className="text-sm text-white/30 mb-10">
+            Built by a former top-producing agent. Not another CRM.
           </p>
 
-          {/* CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#contact"
@@ -73,7 +66,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           animate={{ y: [0, 8, 0] }}

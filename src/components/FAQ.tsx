@@ -5,29 +5,34 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "How is this different from a CRM?",
+    question: "Is this another CRM?",
     answer:
-      "It's not a CRM — it's a command center. Your CRM stores data. We make it work for you. Think of us as the intelligence layer that sits on top of your existing tools and actually tells you what to do next.",
+      "No. It connects to your CRM. This is your AI command center — the intelligence layer that sits on top of AgentBox, VaultRE, or Locked On and makes them 10x more powerful.",
   },
   {
-    question: "Do I need to be technical?",
+    question: "I'm brand new — is this for me?",
     answer:
-      "If you can use Instagram, you can use this. We built 007 for real estate agents, not developers. Everything is point-and-click, and our AI assistant speaks plain English.",
+      "Absolutely. The Rookie plan was built specifically for new agents. Get suburb intelligence, prospecting scripts, SEO content, and AI tools to win your first listing faster than anyone in your office.",
   },
   {
-    question: "What AI models does it use?",
+    question: "Can it really write my ads?",
     answer:
-      "We use the best AI for each job — GPT-4o, Claude, Gemini — you don't need to know which. We automatically route to the best model for each task so you always get the best results without thinking about it.",
+      "Yes. Upload a listing once and it auto-generates Google dynamic ads and Facebook catalog entries. No copywriting. No design work. Your listings become ads automatically.",
   },
   {
-    question: "Can it write property descriptions?",
+    question: "What about my existing listings?",
     answer:
-      "Yes, and they'll sound like YOU, not a template. Our AI learns your writing style, your preferred tone, and your market's language. Every description is unique and on-brand.",
+      "Import from AgentBox or VaultRE in one click. Your existing data flows straight into 007 — no re-entry, no spreadsheets, no pain.",
   },
   {
-    question: "What about my existing tools?",
+    question: "Is my data safe?",
     answer:
-      "We integrate with major CRMs, REA, Domain, and more. 007 doesn't replace your tools — it supercharges them. Keep using what works, and let us fill in the gaps.",
+      "Your data is yours. Always. Bank-level encryption, Australian-hosted servers, and we never share or sell your information. Full stop.",
+  },
+  {
+    question: "What's the Buyer Intelligence System?",
+    answer:
+      "It's our proprietary methodology for turning buyer conversations into listing opportunities. Every buyer leaves a shell behind — we help you find it. Book a demo to learn more. 😏",
   },
 ];
 
@@ -37,7 +42,6 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 sm:py-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +58,6 @@ export default function FAQ() {
           </h2>
         </motion.div>
 
-        {/* FAQ items */}
         <div className="space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
@@ -62,7 +65,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
               className={`rounded-xl border transition-all duration-300 ${
                 openIndex === index
                   ? "bg-[#141414] border-[#c5a55a]/20"

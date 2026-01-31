@@ -4,58 +4,61 @@ import { motion } from "framer-motion";
 
 const plans = [
   {
-    name: "Starter",
-    price: "297",
-    description: "For solo agents getting started with AI",
+    name: "Rookie",
+    price: "197",
+    description: "For new agents chasing their first listings",
     features: [
-      "1 agent",
-      "50 active listings",
-      "Basic AI assistant",
-      "Market intelligence (your suburb)",
-      "Property description generator",
+      "SEO content engine",
+      "Email marketing automation",
+      "Buyer intelligence system",
+      "Basic prospecting tools",
+      "Suburb profiles & market data",
+      "AI chat clone (1 bot)",
       "Email support",
     ],
     popular: false,
+    cta: "Start Free Trial",
   },
   {
-    name: "Professional",
-    price: "597",
-    description: "For growing teams who want the full suite",
+    name: "Pro",
+    price: "497",
+    description: "For growing agents ready to dominate",
     features: [
-      "5 agents",
-      "Unlimited listings",
-      "Full AI suite",
-      "Market intelligence (your region)",
-      "Content machine",
-      "Deal pipeline & CRM sync",
+      "Everything in Rookie, plus:",
+      "Prospecting map (full farm area)",
+      "Listing scraper & tracker",
+      "Google dynamic ads",
+      "Facebook XML catalog",
+      "CRM integration (AgentBox, VaultRE)",
+      "Voice-to-text field intel",
       "Priority support",
     ],
     popular: true,
+    cta: "Start Free Trial",
   },
   {
-    name: "Enterprise",
+    name: "Team",
     price: "997",
-    description: "For agencies that dominate their market",
+    description: "For teams & agencies that want everything",
     features: [
-      "Unlimited agents",
-      "Unlimited everything",
+      "Everything in Pro, plus:",
+      "Team management & KPIs",
+      "Multi-suburb coverage",
+      "API access",
       "Custom AI training",
-      "Market intelligence (national)",
-      "Custom integrations",
-      "Dedicated support & onboarding",
-      "Team KPI dashboard",
       "White-label reports",
+      "Dedicated onboarding",
+      "Priority phone support",
     ],
     popular: false,
+    cta: "Start Free Trial",
   },
 ];
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
@@ -68,7 +71,6 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +90,6 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        {/* Pricing cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -128,7 +129,7 @@ export default function Pricing() {
                     : "bg-white/5 text-white border border-white/10 hover:border-[#c5a55a]/50 hover:text-[#c5a55a]"
                 }`}
               >
-                Start Free Trial
+                {plan.cta}
               </a>
 
               <div className="mt-6 pt-6 border-t border-white/5">
